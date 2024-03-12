@@ -13,7 +13,7 @@ public enum Planets {
     private int distanceFromPreviousPlanet;
     private Planets previousPlanet;
     private int distanceFromSunToPlanet;
-    private int distanceFromSunToMerkury;
+    private static final int distanceFromSunToMerkury = 5;
 
 
 
@@ -25,7 +25,7 @@ public enum Planets {
         this.previousPlanet = previousPlanet;
         this.distanceFromPreviousPlanet = distanceFromPreviousPlanet;
         if (this.previousPlanet == null) {
-            this.distanceFromSunToMerkury = 5;
+            this.distanceFromSunToPlanet = distanceFromSunToMerkury;
         } else {
             this.distanceFromSunToPlanet = (previousPlanet.distanceFromSunToPlanet + distanceFromPreviousPlanet);
         }
